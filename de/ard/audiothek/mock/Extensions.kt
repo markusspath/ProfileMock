@@ -13,6 +13,7 @@ fun List<Double>.getNextLast(): Double {
 fun List<Double>.getOrderAt(position: Int): Double? {
     if (position <= 0) return this.getNextFirst()
     if (position >= this.size) return getNextLast()
+    if (this.size == 1) return getNextLast()
     val elements = this.sorted()
     val before = elements[position - 1]
     val after = elements[position]
